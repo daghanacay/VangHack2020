@@ -1,0 +1,15 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-vanghack2020-dev-100720-authRole",
+      "UnauthRoleArn": "arn:aws:iam::282418482167:role/amplify-vanghack2020-dev-100720-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::282418482167:role/amplify-vanghack2020-dev-100720-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-vanghack2020-dev-100720-deployment",
+      "UnauthRoleName": "amplify-vanghack2020-dev-100720-unauthRole",
+      "StackName": "amplify-vanghack2020-dev-100720",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:282418482167:stack/amplify-vanghack2020-dev-100720/d97eba40-0da8-11eb-beaf-06f55ff23550",
+      "AmplifyAppId": "dfgefpr3zlm6e"
+    }
+  }
+}
