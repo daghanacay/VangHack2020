@@ -1,14 +1,13 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output
 #from app import app
 import pandas as pd
 import os
 from pathlib import Path
 from datetime import datetime, date
 
-app = dash.Dash(__name__)
+from app import app
 
 folder = os.getcwd()
 portfolio_returns_table = pd.read_csv(Path(folder, 'portfolioreturns_maria.csv',parse_dates=[0]))
