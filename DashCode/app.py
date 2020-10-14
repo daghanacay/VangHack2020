@@ -4,7 +4,7 @@ from flask_restful import Resource, Api
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
-from apps import comparison
+from apps import comparison, leadership
 
 from app_holder import app
 
@@ -21,8 +21,8 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/comparison':
         return comparison.layout
-    # elif pathname == '/leadership':
-    #     return app2.layout
+    elif pathname == '/leadership':
+        return leadership.layout
     else:
         return '404'
 
