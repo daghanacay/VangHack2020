@@ -1,17 +1,38 @@
+body {
+  background: black;
+  color: white;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vh;
   pointer-events: none;
+  margin-bottom: 4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.header-bar .App-logo  {
+  margin-bottom: 0;
+}
+
+.header-bar .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.username {
+  margin-right: 2rem;
+}
+
 
 .App-header {
   background-color: #282c34;
