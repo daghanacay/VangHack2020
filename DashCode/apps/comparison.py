@@ -5,10 +5,10 @@ import dash_html_components as html
 import pandas as pd
 from plotly import graph_objects
 import plotly.express as px
-from app import app
 from dash.dependencies import Input, Output
 
 # from DashCode.apps.helper_methods import get_portfolio_returns
+from app_holder import app
 
 folder = os.getcwd()
 
