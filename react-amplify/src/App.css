@@ -1,8 +1,3 @@
-body {
-  background: black;
-  color: white;
-}
-
 .App {
   text-align: center;
 }
@@ -45,6 +40,10 @@ body {
   color: white;
 }
 
+.content {
+  margin: 1rem;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -56,4 +55,8 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.growth {
+  background-image: url('./growth.png');
 }
