@@ -11,13 +11,9 @@ export const getBlog = /* GraphQL */ `
           id
           title
           blogID
-          createdAt
-          updatedAt
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -34,8 +30,6 @@ export const listBlogs = /* GraphQL */ `
         posts {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       nextToken
     }
@@ -53,21 +47,15 @@ export const getPost = /* GraphQL */ `
         posts {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       comments {
         items {
           id
           postID
           content
-          createdAt
-          updatedAt
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -85,14 +73,10 @@ export const listPosts = /* GraphQL */ `
         blog {
           id
           name
-          createdAt
-          updatedAt
         }
         comments {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       nextToken
     }
@@ -110,18 +94,12 @@ export const getComment = /* GraphQL */ `
         blog {
           id
           name
-          createdAt
-          updatedAt
         }
         comments {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       content
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -139,12 +117,8 @@ export const listComments = /* GraphQL */ `
           id
           title
           blogID
-          createdAt
-          updatedAt
         }
         content
-        createdAt
-        updatedAt
       }
       nextToken
     }

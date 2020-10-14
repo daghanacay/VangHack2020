@@ -11,13 +11,9 @@ export const onCreateBlog = /* GraphQL */ `
           id
           title
           blogID
-          createdAt
-          updatedAt
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -31,13 +27,9 @@ export const onUpdateBlog = /* GraphQL */ `
           id
           title
           blogID
-          createdAt
-          updatedAt
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -51,13 +43,9 @@ export const onDeleteBlog = /* GraphQL */ `
           id
           title
           blogID
-          createdAt
-          updatedAt
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -73,21 +61,15 @@ export const onCreatePost = /* GraphQL */ `
         posts {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       comments {
         items {
           id
           postID
           content
-          createdAt
-          updatedAt
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -103,21 +85,15 @@ export const onUpdatePost = /* GraphQL */ `
         posts {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       comments {
         items {
           id
           postID
           content
-          createdAt
-          updatedAt
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -133,21 +109,15 @@ export const onDeletePost = /* GraphQL */ `
         posts {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       comments {
         items {
           id
           postID
           content
-          createdAt
-          updatedAt
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -163,18 +133,12 @@ export const onCreateComment = /* GraphQL */ `
         blog {
           id
           name
-          createdAt
-          updatedAt
         }
         comments {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       content
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -190,18 +154,12 @@ export const onUpdateComment = /* GraphQL */ `
         blog {
           id
           name
-          createdAt
-          updatedAt
         }
         comments {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       content
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -217,18 +175,12 @@ export const onDeleteComment = /* GraphQL */ `
         blog {
           id
           name
-          createdAt
-          updatedAt
         }
         comments {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       content
-      createdAt
-      updatedAt
     }
   }
 `;
