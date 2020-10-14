@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
+import Amplify from 'aws-amplify';
 import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import './App.css';
 import awsconfig from './aws-exports';
 
