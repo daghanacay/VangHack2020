@@ -3,7 +3,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 
 from app import app
-from apps import comparison, app2
+from apps import comparison
 
 
 app.layout = html.Div([
@@ -17,8 +17,8 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/comparison':
         return comparison.layout
-    elif pathname == '/leadership':
-        return app2.layout
+    # elif pathname == '/leadership':
+    #     return app2.layout
     else:
         return '404'
 
