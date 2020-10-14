@@ -8,7 +8,7 @@ import plotly.express as px
 from dash.dependencies import Input, Output
 
 # from DashCode.apps.helper_methods import get_portfolio_returns
-from DashCode.app_holder import app
+from app_holder import app
 
 folder = os.getcwd()
 
