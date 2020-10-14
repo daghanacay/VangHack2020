@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './etf-logo.png';
 import Amplify from 'aws-amplify';
 import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
@@ -21,11 +21,21 @@ const AuthStateApp = () => {
 
 return authState === AuthState.SignedIn && user ? (
     <div className="App">
-        <div>Hello, {user.username}</div>
+    <div className="header-bar">
+    <div class="left">
+      <img src={logo} className="App-logo" alt="logo" />
+    </div>
+    <div class="right">
+        <div className="username">Hello, {user.username}</div>
         <AmplifySignOut />
+        </div>
+        </div>
     </div>
   ) : (
+    <div className="App">
+    <img src={logo} className="App-logo" alt="logo" />
     <AmplifyAuthenticator />
+    </div>
 );
 }
 
