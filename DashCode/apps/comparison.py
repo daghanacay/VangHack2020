@@ -12,7 +12,7 @@ from dash.dependencies import Input, Output
 
 folder = os.getcwd()
 
-path = '/home/manveer/hackathon/VangHack2020/asx-data/asx_etf_list.csv'
+path = 'asx_etf_list.csv'
 df = pd.read_csv(path)
 
 df['ASX Code'] = df['ASX Code'].astype(str) + '.AX'
