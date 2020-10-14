@@ -7,6 +7,8 @@ import plotly.express as px
 from app import app
 from dash.dependencies import Input, Output
 
+from DashCode.apps.helper_methods import get_portfolio_returns
+
 folder = os.getcwd()
 
 path = '/home/manveer/hackathon/VangHack2020/asx-data/asx_etf_list.csv'
@@ -26,6 +28,8 @@ asx_ytd_data = pd.read_csv('prices_2020.csv')
 asx_ytd_data.set_index('Date', inplace=True)
 portfolio_data = pd.read_csv('portfolioreturns.csv')
 portfolio_data.set_index('Date', inplace=True)
+
+# get_portfolio_returns()
 
 
 layout = html.Div([html.H1('VANGUARD FANTASY ETF EXCHANGE',
