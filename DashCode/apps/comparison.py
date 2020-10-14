@@ -22,9 +22,9 @@ benchmark_options = [{'label': i, 'value': i} for i in ['Top Portfolio - All Tim
 
 benchmark_options.extend([{'label': i, 'value': i} for i in df['ASX Code']])
 
-asx_ytd_data = pd.read_csv('/home/manveer/hackathon/VangHack2020/asx-data/prices_2020.csv')
+asx_ytd_data = pd.read_csv('prices_2020.csv')
 asx_ytd_data.set_index('Date', inplace=True)
-portfolio_data = pd.read_csv('/home/manveer/hackathon/VangHack2020/asx-data/portfolioreturns.csv')
+portfolio_data = pd.read_csv('portfolioreturns.csv')
 portfolio_data.set_index('Date', inplace=True)
 
 
@@ -75,21 +75,17 @@ def update_output(portfolio, benchmark, category):
     if not benchmark or not portfolio or not category:
         return None
 
-    print(portfolio)
-    print(benchmark)
-    print(category)
+    # print(portfolio)
+    # print(benchmark)
+    # print(category)
 
-    portfolio_df = None
     if portfolio == 'Entire Portfolio':
         portfolio_df = portfolio_data.loc[:, ['4']]
         portfolio_df.rename(columns={'4': portfolio}, inplace=True)
     else:
         portfolio_df = asx_ytd_data.loc[:, [portfolio.replace('.AX', '')]]
-    print(portfolio_df)
+    # print(portfolio_df)
 
-
-    benchmark_df = None
-    benchmark_column_name = ''
 
     if benchmark == 'Top Portfolio - All Time':
         benchmark_df = portfolio_data.loc[:, ['6']]
@@ -116,13 +112,6 @@ def update_output(portfolio, benchmark, category):
 
     print(export_dataframe)
 
-    # if category != 'YTD%':
-    #     return None
-    #
-    # # Get portfolio data
-    #
-    #
-    #
     fig = px.line(export_dataframe, x='Date', y=[portfolio.replace('.AX', ''), benchmark.replace('.AX', '')], title='ETF Performance',
                   labels={'value': 'Price'})
 
