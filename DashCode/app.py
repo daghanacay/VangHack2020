@@ -6,8 +6,8 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 from apps import comparison
 
+from DashCode.app_holder import app
 
-app = dash.Dash(__name__, suppress_callback_exceptions=True)
 application = app.server
 
 app.layout = html.Div([
