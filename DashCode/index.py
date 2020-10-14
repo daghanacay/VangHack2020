@@ -3,7 +3,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 
 from app import app
-from apps import comparison, app2
+from apps import comparison, app2, etf_create
 
 
 app.layout = html.Div([
@@ -19,6 +19,8 @@ def display_page(pathname):
         return comparison.layout
     elif pathname == '/leadership':
         return app2.layout
+    elif pathname == '/createetf':
+        return etf_create.layout
     else:
         return '404'
 
