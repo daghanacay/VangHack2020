@@ -1,17 +1,30 @@
 import dash
 from flask import Flask, jsonify, request
 from flask_restful import Resource, Api
+import dash_core_components as dcc
+import dash_html_components as html
+from dash.dependencies import Input, Output
+from apps import comparison
+
 
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
-server = app.server
+application = app.server
 
-@server.route('/ticker_data')
-def ticker_data():
-    ticker = request.args.get('ticker')
-    start_date = request.args.get('start-date')
-    end_date = request.args.get('end-date')
-    print(ticker, start_date, end_date)
-    return jsonify({'message': 'this is the first route'})
+app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
+    html.Div(id='page-content')
+])
+
+
+@app.callback(Output('page-content', 'children'),
+              [Input('url', 'pathname')])
+def display_page(pathname):
+    if pathname == '/comparison':
+        return comparison.layout
+    # elif pathname == '/leadership':
+    #     return app2.layout
+    else:
+        return '404'
 
 if __name__ == '__main__':
-    app.run_server(debug=True, host='0.0.0.0')
+    application.run(debug=True)
