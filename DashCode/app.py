@@ -6,7 +6,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 from apps import comparison
 
-from DashCode.app_holder import app
+from app_holder import app
 
 application = app.server
 
