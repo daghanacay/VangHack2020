@@ -81,6 +81,8 @@ function Porfolio(props) {
                         subheader="Total Investment"
                     />
                 </Card>
+
+                <Link href="https://vanguard.csod.com/catalog/CustomPage.aspx?id=20000533&tab_page_id=20000533" target="_blank" color="primary" rel="noreferrer" underline='none' >Learn and earn $10!!!</Link>
             </Grid>
             <Grid item xs={12} sm={4} md={3}>
 
@@ -168,6 +170,8 @@ function Porfolio(props) {
                                 subheader="Cash"
                             />
                         </Card>
+                        <Link href="https://vanguard.csod.com/catalog/CustomPage.aspx?id=20000533&tab_page_id=20000533" target="_blank" color="primary" rel="noreferrer" underline='none' >Learn and earn $10!!!</Link>
+
                     </Grid>
                 </Grid>
 

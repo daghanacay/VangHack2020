@@ -26,12 +26,12 @@ const columns = [
     { field: 'quantity', headerName: 'Quantity' },
     {
         type: 'number',
-        field: 'purchasedPrice', headerName: 'Price',
+        field: 'purchasedPrice', headerName: 'Purchased Market Value',
         valueFormatter: ({ value }) => currencyFormatter.format(Number(value)),
     },
     {
         type: 'number',
-        field: 'currentValue', headerName: 'Current Value',
+        field: 'currentValue', headerName: 'Current Market Value',
         valueFormatter: ({ value }) => currencyFormatter.format(Number(value)),
     }
 ];
