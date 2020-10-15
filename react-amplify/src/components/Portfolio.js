@@ -5,10 +5,11 @@ import closePrice from '../data/closePrice';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
-import Icon from '@material-ui/core/Icon';
 
 import PortfolioTable from './PortfolioTable';
 import PortfolioChart from './PortfolioChart';
+import Team from './Team';
+import { Button } from '@material-ui/core';
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -24,7 +25,7 @@ const percentageFormatter = new Intl.NumberFormat('en-US', {
 function Porfolio(props) {
     function getUserProfile() {
         console.log(props);
-        const userProfile = profile[props.username];
+        const userProfile = profile[props.username] || profile.other;
         return userProfile;
     }
 
@@ -113,43 +114,58 @@ function Porfolio(props) {
             <Grid item xs={12} md={4}>
                 <PortfolioChart userProfile={getUserProfile()} ></PortfolioChart>
             </Grid>
-            <Grid item xs={12} sm={4} md={3}>
+            <Grid item xs={12} md={6}>
 
-                <Card style={{ backgroundColor: 'rgba(227, 114, 34, 0.4)' }}>
+
+                <Card>
                     <CardHeader
-                        title={7}
-                        subheader="Buddies"
+                        title="My teams"
                     />
+                    <Button color='primary' variant="contained" style={{ float: "right", marginTop: "-3rem", marginRight: "1rem" }}>Join team</Button>
+                    <Team></Team>
                 </Card>
             </Grid>
-            <Grid item xs={12} sm={4} md={3}>
+            <Grid item xs={12} md={6}>
+                <Grid container spacing={5}>
+                    <Grid item xs={12} sm={6}>
 
-                <Card style={{ backgroundColor: '#f6f8f1' }}>
-                    <CardHeader
-                        title={'$4,500'}
-                        subheader="Avg Investment"
-                    />
-                </Card>
+                        <Card style={{ backgroundColor: 'rgba(227, 114, 34, 0.4)' }}>
+                            <CardHeader
+                                title={7}
+                                subheader="Buddies"
+                            />
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+
+                        <Card style={{ backgroundColor: '#f6f8f1' }}>
+                            <CardHeader
+                                title={'$4,500'}
+                                subheader="Avg Investment"
+                            />
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+
+                        <Card style={{ backgroundColor: '#f2f2f2' }}>
+                            <CardHeader
+                                title={'#275'}
+                                subheader="Overall rank"
+                            />
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+
+                        <Card style={{ backgroundColor: '#bbcf9c' }}>
+                            <CardHeader
+                                title={currencyFormatter.format(Number(getTotalValue().cash))}
+                                subheader="Cash"
+                            />
+                        </Card>
+                    </Grid>
+                </Grid>
+
             </Grid>
-            <Grid item xs={12} sm={4} md={3}>
-
-                <Card style={{ backgroundColor: '#f2f2f2' }}>
-                    <CardHeader
-                        title={'#27'}
-                        subheader="Leader board"
-                    />
-                </Card>
-            </Grid>
-            <Grid item xs={12} sm={4} md={3}>
-
-                <Card style={{ backgroundColor: '#bbcf9c' }}>
-                    <CardHeader
-                        title={currencyFormatter.format(Number(getTotalValue().cash))}
-                        subheader="Cash"
-                    />
-                </Card>
-            </Grid>
-
         </Grid >)
 }
 
