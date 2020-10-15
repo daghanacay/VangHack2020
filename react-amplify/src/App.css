@@ -60,3 +60,7 @@
 .growth {
   background-image: url('./growth.png');
 }
+
+.MuiCardActions-root {
+  justify-content: center;
+}

@@ -5,11 +5,12 @@ import closePrice from '../data/closePrice';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
+import CardActions from '@material-ui/core/CardActions';
 
 import PortfolioTable from './PortfolioTable';
 import PortfolioChart from './PortfolioChart';
 import Team from './Team';
-import { Button } from '@material-ui/core';
+import { Button, Link } from '@material-ui/core';
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -92,12 +93,15 @@ function Porfolio(props) {
             </Grid>
             <Grid item xs={12} sm={4} md={3}>
 
-                <Card style={{ backgroundColor: '#f6f8f1' }}>
-                    <CardHeader
-                        title={percentageFormatter.format(Number(getTotalValue().netGrowth))}
-                        subheader="Growth"
-                    />
-                </Card>
+
+                <Link href="http://52.63.91.203:8080/comparison" target="_blank" color="primary" rel="noreferrer" underline='none' >
+                    <Card style={{ backgroundColor: '#f6f8f1' }}>
+                        <CardHeader
+                            title={percentageFormatter.format(Number(getTotalValue().netGrowth))}
+                            subheader="Return"
+                        />
+                    </Card>
+                </Link>
             </Grid>
             <Grid item xs={12} sm={4} md={3}>
 
@@ -121,7 +125,7 @@ function Porfolio(props) {
                     <CardHeader
                         title="My teams"
                     />
-                    <Button color='primary' variant="contained" style={{ float: "right", marginTop: "-3rem", marginRight: "1rem" }}>Join team</Button>
+                    <Button color='primary' variant="contained" style={{ float: "right", marginTop: "-3rem", marginRight: "1rem" }} >Join team</Button>
                     <Team></Team>
                 </Card>
             </Grid>
@@ -147,12 +151,14 @@ function Porfolio(props) {
                     </Grid>
                     <Grid item xs={12} sm={6}>
 
-                        <Card style={{ backgroundColor: '#f2f2f2' }}>
-                            <CardHeader
-                                title={'#275'}
-                                subheader="Overall rank"
-                            />
-                        </Card>
+                        <Link href="http://54.206.87.115:8080/leadership" target="_blank" color="primary" rel="noreferrer" underline='none' >
+                            <Card style={{ backgroundColor: '#f2f2f2' }}>
+                                <CardHeader
+                                    title={'#275'}
+                                    subheader="Overall rank"
+                                />
+                            </Card>
+                        </Link>
                     </Grid>
                     <Grid item xs={12} sm={6}>
 
