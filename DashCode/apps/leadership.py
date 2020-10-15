@@ -13,7 +13,10 @@ from dash.dependencies import Input, Output
 from app_holder import app
 
 top_10_df = pd.read_csv('top_10_ranks.csv')
+chart_data = pd.read_csv('portfolio_leaders.csv')
 
+fig = px.line(chart_data, x="Date", y=['Olive Yew','Maureen Biologist','Allie Grater','VAS', 'Lois Di Nominator','P. Ann O’Recital','Ray Sin','Harriet Upp','Bea Mine','Skye Blue','Eileen Dover'])
+fig.update_layout(legend_title_text = 'Investor')
 
 layout = html.Div([html.H1('FANTASY ETF - Leadership Board',
                            style={'textAlign': 'center', 'fontSize': 30, 'color': 'maroon',
@@ -27,7 +30,7 @@ html.Div(dcc.Dropdown(id='range', options=[{'label': i, 'value': i} for i in
     id='table',
     columns=[{"name": i, "id": i} for i in top_10_df.columns],
     data=top_10_df.to_dict('records')),
-    html.Div(dcc.Graph(id='leadership-graph'))]
+    html.Div(dcc.Graph(id='leadership-graph', figure=fig))]
 )
 
 app.layout = layout
